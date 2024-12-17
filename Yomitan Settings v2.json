@@ -1,0 +1,2011 @@
+{
+    "version": 0,
+    "date": "2024-12-11 15:45:28",
+    "url": "chrome-extension://likgccmbimhjbgkjambclfkhldnlhbnn/",
+    "manifest": {
+        "action": {
+            "default_icon": {
+                "16": "images/icon16.png",
+                "19": "images/icon19.png",
+                "32": "images/icon32.png",
+                "38": "images/icon38.png",
+                "48": "images/icon48.png",
+                "64": "images/icon64.png",
+                "128": "images/icon128.png"
+            },
+            "default_popup": "action-popup.html",
+            "default_title": "Yomitan"
+        },
+        "author": {
+            "email": "themoeway@googlegroups.com"
+        },
+        "background": {
+            "service_worker": "sw.js",
+            "type": "module"
+        },
+        "commands": {
+            "openInfoPage": {
+                "description": "Open the info page"
+            },
+            "openPopupWindow": {
+                "description": "Open the popup window"
+            },
+            "openSearchPage": {
+                "description": "Open the search page",
+                "suggested_key": {
+                    "default": "Alt+Insert"
+                }
+            },
+            "openSettingsPage": {
+                "description": "Open the settings page"
+            },
+            "toggleTextScanning": {
+                "description": "Toggle text scanning on/off",
+                "suggested_key": {
+                    "default": "Alt+Delete"
+                }
+            }
+        },
+        "content_scripts": [
+            {
+                "all_frames": true,
+                "js": [
+                    "js/app/content-script-wrapper.js"
+                ],
+                "match_about_blank": true,
+                "matches": [
+                    "http://*/*",
+                    "https://*/*",
+                    "file://*/*"
+                ],
+                "run_at": "document_idle"
+            }
+        ],
+        "content_security_policy": {
+            "extension_pages": "default-src 'self'; img-src blob: 'self'; style-src 'self' 'unsafe-inline'; media-src *; connect-src *",
+            "sandbox": "sandbox allow-scripts; default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'unsafe-inline'"
+        },
+        "description": "Popup dictionary for language learning",
+        "differential_fingerprint": "1.ba6747b52cdd870c40d30e1c44f470beba7693ba58234e1df856120ef3f8d3f7",
+        "host_permissions": [
+            "<all_urls>"
+        ],
+        "icons": {
+            "16": "images/icon16.png",
+            "19": "images/icon19.png",
+            "32": "images/icon32.png",
+            "38": "images/icon38.png",
+            "48": "images/icon48.png",
+            "64": "images/icon64.png",
+            "128": "images/icon128.png"
+        },
+        "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuFMG+/vjX2le7bR1dzuuLZwLxycxTxo033lLgMvO2BYQeQjIxhHazptr+34TX9oN71jnDxc11MWIl/pJPXVhdWyawrVNX9AVSz0kqOcvv0TqJAoVofLeAtRAeANjGjIM6QN46SAq9RAsKh60+0ZxYVWasFHB0gdbIaucJE54sXcUOGBsCah/ZziZMsunEhWpUC0nKT3eW9/eRQVHMBVFQ06R1luESf2f0EXbiS70smI0j3jb0xxWnbHQS8Bz20WZi0/kcysCmU/suMKCzdRXENWVcPG2xpcIYbSXBUHuP25jr3qElq5VEqeIUeHdYHd0GbkhlHPG0Cuo38q6D4lQ5wIDAQAB",
+        "manifest_version": 3,
+        "minimum_chrome_version": "102.0.0.0",
+        "name": "Yomitan Popup Dictionary",
+        "optional_permissions": [
+            "clipboardRead",
+            "nativeMessaging"
+        ],
+        "options_ui": {
+            "open_in_tab": true,
+            "page": "settings.html"
+        },
+        "permissions": [
+            "storage",
+            "clipboardWrite",
+            "unlimitedStorage",
+            "declarativeNetRequest",
+            "scripting",
+            "offscreen",
+            "contextMenus"
+        ],
+        "sandbox": {
+            "pages": [
+                "template-renderer.html"
+            ]
+        },
+        "update_url": "https://clients2.google.com/service/update2/crx",
+        "version": "24.12.10.0",
+        "web_accessible_resources": [
+            {
+                "matches": [
+                    "<all_urls>"
+                ],
+                "resources": [
+                    "popup.html",
+                    "template-renderer.html",
+                    "js/*"
+                ]
+            }
+        ]
+    },
+    "environment": {
+        "browser": "chrome",
+        "platform": {
+            "os": "mac"
+        }
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "permissions": {
+        "origins": [
+            "<all_urls>",
+            "file:///*",
+            "http://*/*",
+            "https://*/*"
+        ],
+        "permissions": [
+            "clipboardRead",
+            "clipboardWrite",
+            "contextMenus",
+            "nativeMessaging",
+            "storage",
+            "unlimitedStorage",
+            "declarativeNetRequest",
+            "scripting",
+            "offscreen"
+        ]
+    },
+    "options": {
+        "profiles": [
+            {
+                "name": "Mining",
+                "options": {
+                    "general": {
+                        "enable": true,
+                        "resultOutputMode": "group",
+                        "debugInfo": false,
+                        "maxResults": 32,
+                        "showAdvanced": true,
+                        "popupDisplayMode": "default",
+                        "popupWidth": 512,
+                        "popupHeight": 312,
+                        "popupHorizontalOffset": 0,
+                        "popupVerticalOffset": 0,
+                        "popupHorizontalOffset2": 0,
+                        "popupVerticalOffset2": 0,
+                        "popupHorizontalTextPosition": "below",
+                        "popupVerticalTextPosition": "before",
+                        "showGuide": false,
+                        "compactTags": true,
+                        "mainDictionary": "JMdict",
+                        "customPopupCss": ":root {\n    --background-color: #DEE4E7;\n    --text-color: #000000;\n    --tag-frequency-background-color: #8181C1;\n    --tag-part-of-speech-background-color: #8181C1;\n    --tag-text-color: #FFFFFF;\n    --reason-text-color: #808080;\n    --notification-text-color: #000000;\n    --notification-background-color: #E5E9F0;\n    --sidebar-background-color: #CFD9DC;\n    --sidebar-button-background-color-hover: #9283C1;\n    --sidebar-button-danger-background-color-hover: #BF616A;\n    --sidebar-button-icon-color: #A89BD0;\n    --accent-color: #8181C1;\n    --dict-color: #9057AD;\n    --dict-text-color: #FFFFFF;\n}\n\n:root[data-theme=\"dark\"] {\n    --background-color: #2E303E;\n    --text-color: #FFFFFF;\n    --tag-frequency-background-color: #67679A;\n    --tag-part-of-speech-background-color: #67679A;\n    --reason-text-color: #808080;\n    --notification-text-color: #FFFFFF;\n    --notification-background-color: #3B4252;\n    --sidebar-background-color: #262733;\n    --sidebar-button-background-color-hover: #644EA7;\n    --sidebar-button-danger-background-color-hover: #BF616A;\n    --sidebar-button-icon-color: #A89BD0;\n    --accent-color: #67679A;\n    --dict-color: #9057AD;\n    --dict-text-color: #FFFFFF;\n}\n\nspan.headword-term {\n    font-family: notosans;\n}\n\nspan.query-parser-term {\n    font-family: notosans;\n}\n\n.gloss-content {\n    font-family: notosans;\n    line-height: 1.5;\n    font-size: 16px;\n}\n\n.definition-tag-list {\n    float: left;\n    line-height: 1;\n    height: 1em;\n}\n \n.definition-list {\n    padding: 0;\n}\n\n.definition-item { \n    display: inline-block;\n    margin-bottom: 10px;\n    border-bottom: 1px solid;\n    margin: 0 calc(0px - var(--entry-horizontal-padding));\n    width: 100%;\n    padding: 10px calc(var(--entry-horizontal-padding)) 10px calc(var(--entry-horizontal-padding));\n}\n\n.tag-label-content {\n    font-family: notosans;\n    font-size: 11px;\n}\n\n.tag {\n    --tag-height: 0;\n}\n\n.tag[data-details=\"アクセント辞典\"] {\n    --tag-color: var(--accent-color);\n    --tag-text-color: var(--dict-text-color);\n}\n\n.tag[data-details=\"JMdict (English)\"] {\n    --tag-color: var(--dict-color);\n    --tag-text-color: var(--dict-text-color);\n}\n \n.tag[data-details=\"旺文社国語辞典 第十一版\"] {\n    --tag-color: var(--dict-color);\n    --tag-text-color: var(--dict-text-color);\n}\n \n.tag[data-details=\"明鏡国語辞典\"] { \n    --tag-color: var(--dict-color);\n    --tag-text-color: var(--dict-text-color);\n}\n \n.tag[data-details=\"ハイブリッド新辞林\"] {\n    --tag-color: var(--dict-color);\n    --tag-text-color: var(--dict-text-color);\n}\n \n.tag[data-details=\"実用日本語表現辞典\"] {\n    --tag-color: var(--dict-color);\n    --tag-text-color: var(--dict-text-color);\n}\n \n.tag[data-details=\"新明解国語辞典 第五版\"] {\n    --tag-color: var(--dict-color);\n    --tag-text-color: var(--dict-text-color);\n}\n \n.tag[data-details=\"デジタル大辞泉\"] {\n    --tag-color: var(--dict-color);\n    --tag-text-color: var(--dict-text-color);\n}\n \n.tag[data-details=\"研究社　新和英大辞典　第５版\"] {\n    --tag-color: var(--dict-color);\n    --tag-text-color: var(--dict-text-color);\n}\n\n::-webkit-scrollbar {\n    display: none;\n}\n\n.top-progress-bar-container {\n    display: none;\n}\n\n.kanji-glyph-data > tbody > tr:nth-child(n + 3) {\n  display: none;\n}\n\ndiv.entry[data-type='kanji']:nth-child(n + 2) .kanji-glyph-container,\ndiv.entry[data-type='kanji']:nth-child(n + 2) [data-section-type='frequencies'],\ndiv.entry[data-type='kanji']:nth-child(n + 2) table.kanji-glyph-data > tbody > tr:first-child {\n  display: none;\n}\n\n.kanji-info-table-item-value-empty {\n  display: none;\n}\n\n.kanji-glyph-data,\ndiv.entry[data-type='kanji'],\ndiv.entry[data-type='kanji']:nth-child(n + 2) .kanji-glyph-data > tbody > tr > *,\n.kanji-glyph-data dl.kanji-readings-japanese,\ndiv.entry[data-type='kanji']:nth-child(n + 2)\n  .kanji-glyph-data\n  dl.kanji-readings-chinese[data-count='0'] {\n  padding-top: 0 !important;\n  padding-bottom: 0 !important;\n  margin-bottom: 0em;\n  margin-top: 0 !important;\n}\n\n.entry + .entry[data-type='kanji'],\ndiv#dictionary-entries > div.entry:nth-child(n + 2) .kanji-glyph-data > tbody > tr > * {\n  border-top: none !important;\n}\n\n.kanji-gloss-list {\n  list-style-type: circle;\n}",
+                        "popupTheme": "dark",
+                        "popupOuterTheme": "site",
+                        "customPopupOuterCss": "",
+                        "enableWanakana": true,
+                        "popupScalingFactor": 1.1,
+                        "popupScaleRelativeToPageZoom": false,
+                        "popupScaleRelativeToVisualViewport": true,
+                        "showPitchAccentDownstepNotation": true,
+                        "showPitchAccentPositionNotation": true,
+                        "showPitchAccentGraph": true,
+                        "showIframePopupsInRootFrame": false,
+                        "useSecurePopupFrameUrl": true,
+                        "usePopupShadowDom": true,
+                        "usePopupWindow": false,
+                        "glossaryLayoutMode": "compact",
+                        "popupCurrentIndicatorMode": "triangle",
+                        "popupActionBarVisibility": "auto",
+                        "popupActionBarLocation": "top",
+                        "frequencyDisplayMode": "split-tags-grouped",
+                        "termDisplayMode": "ruby",
+                        "sortFrequencyDictionary": "CC100",
+                        "sortFrequencyDictionaryOrder": "ascending",
+                        "language": "ja",
+                        "enableContextMenuScanSelected": true,
+                        "stickySearchHeader": false,
+                        "fontFamily": "",
+                        "fontSize": 14,
+                        "lineHeight": "1.5",
+                        "showDebug": false
+                    },
+                    "audio": {
+                        "enabled": true,
+                        "sources": [
+                            {
+                                "type": "jpod101",
+                                "url": "",
+                                "voice": ""
+                            },
+                            {
+                                "type": "language-pod-101",
+                                "url": "",
+                                "voice": ""
+                            },
+                            {
+                                "type": "custom-json",
+                                "url": "http://localhost:8770/?term={term}&reading={reading}",
+                                "voice": ""
+                            }
+                        ],
+                        "volume": 25,
+                        "autoPlay": false
+                    },
+                    "scanning": {
+                        "selectText": true,
+                        "alphanumeric": false,
+                        "autoHideResults": true,
+                        "delay": 0,
+                        "length": 10,
+                        "deepDomScan": false,
+                        "popupNestingMaxDepth": 0,
+                        "enablePopupSearch": false,
+                        "enableOnPopupExpressions": true,
+                        "enableOnSearchPage": true,
+                        "enableSearchTags": false,
+                        "layoutAwareScan": false,
+                        "hideDelay": 100,
+                        "preventMiddleMouse": {
+                            "onWebPages": false,
+                            "onPopupPages": false,
+                            "onSearchPages": false,
+                            "onSearchQuery": false
+                        },
+                        "inputs": [
+                            {
+                                "include": "shift",
+                                "exclude": "mouse0",
+                                "types": {
+                                    "mouse": true,
+                                    "touch": false,
+                                    "pen": false
+                                },
+                                "options": {
+                                    "showAdvanced": false,
+                                    "searchTerms": true,
+                                    "searchKanji": true,
+                                    "scanOnTouchMove": true,
+                                    "scanOnPenHover": true,
+                                    "scanOnPenPress": true,
+                                    "scanOnPenRelease": false,
+                                    "preventTouchScrolling": true,
+                                    "scanOnPenMove": true,
+                                    "scanOnPenReleaseHover": false,
+                                    "scanOnTouchPress": false,
+                                    "scanOnTouchRelease": false,
+                                    "preventPenScrolling": true,
+                                    "scanOnTouchTap": true
+                                }
+                            },
+                            {
+                                "include": "mouse2",
+                                "exclude": "",
+                                "types": {
+                                    "mouse": true,
+                                    "touch": false,
+                                    "pen": false
+                                },
+                                "options": {
+                                    "showAdvanced": false,
+                                    "searchTerms": true,
+                                    "searchKanji": true,
+                                    "scanOnTouchMove": true,
+                                    "scanOnPenHover": true,
+                                    "scanOnPenPress": true,
+                                    "scanOnPenRelease": false,
+                                    "preventTouchScrolling": true,
+                                    "scanOnPenMove": true,
+                                    "scanOnPenReleaseHover": false,
+                                    "scanOnTouchPress": false,
+                                    "scanOnTouchRelease": false,
+                                    "preventPenScrolling": true,
+                                    "scanOnTouchTap": true
+                                }
+                            },
+                            {
+                                "include": "",
+                                "exclude": "",
+                                "types": {
+                                    "mouse": false,
+                                    "touch": true,
+                                    "pen": true
+                                },
+                                "options": {
+                                    "showAdvanced": false,
+                                    "searchTerms": true,
+                                    "searchKanji": true,
+                                    "scanOnTouchMove": false,
+                                    "scanOnPenHover": false,
+                                    "scanOnPenPress": true,
+                                    "scanOnPenRelease": false,
+                                    "preventTouchScrolling": false,
+                                    "scanOnPenMove": true,
+                                    "scanOnPenReleaseHover": false,
+                                    "scanOnTouchPress": false,
+                                    "scanOnTouchRelease": false,
+                                    "preventPenScrolling": false,
+                                    "scanOnTouchTap": true
+                                }
+                            }
+                        ],
+                        "modifier": null,
+                        "matchTypePrefix": false,
+                        "hidePopupOnCursorExit": false,
+                        "hidePopupOnCursorExitDelay": 100,
+                        "normalizeCssZoom": true,
+                        "scanWithoutMousemove": true,
+                        "scanResolution": "character"
+                    },
+                    "dictionaries": [
+                        {
+                            "name": "JMdict [2024-10-12]",
+                            "alias": "JMdict [2024-10-12]",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "Jitendex.org [2024-02-25]",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "Jitendex.org [2024-02-25]"
+                        },
+                        {
+                            "name": "JMnedict",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "JMnedict"
+                        },
+                        {
+                            "name": "日本語文法辞典(全集)",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "日本語文法辞典(全集)"
+                        },
+                        {
+                            "name": "三省堂国語辞典　第八版",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "三省堂国語辞典　第八版"
+                        },
+                        {
+                            "name": "明鏡国語辞典　第二版",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "明鏡国語辞典　第二版"
+                        },
+                        {
+                            "name": "デジタル大辞泉",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "デジタル大辞泉"
+                        },
+                        {
+                            "name": "漢字ペディア同訓異義",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "漢字ペディア同訓異義"
+                        },
+                        {
+                            "name": "PixivLight",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "PixivLight"
+                        },
+                        {
+                            "name": "実用日本語表現辞典",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "実用日本語表現辞典"
+                        },
+                        {
+                            "name": "全国方言辞典",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "全国方言辞典"
+                        },
+                        {
+                            "name": "weblio古語辞典",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "weblio古語辞典"
+                        },
+                        {
+                            "name": "漢字辞典オンライン",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "漢字辞典オンライン"
+                        },
+                        {
+                            "name": "NHK",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "NHK"
+                        },
+                        {
+                            "name": "JPDBv2㋕",
+                            "alias": "JPDBv2㋕",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "VN",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "VN"
+                        },
+                        {
+                            "name": "Novels",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "Novels"
+                        },
+                        {
+                            "name": "Anime & J-drama",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "Anime & J-drama"
+                        },
+                        {
+                            "name": "Wikipedia",
+                            "alias": "Wikipedia",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "Youtube",
+                            "alias": "Youtube",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "BCCWJ",
+                            "alias": "BCCWJ",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "CC100",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "CC100"
+                        },
+                        {
+                            "name": "Innocent Ranked",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "Innocent Ranked"
+                        },
+                        {
+                            "name": "Narou",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "Narou"
+                        }
+                    ],
+                    "anki": {
+                        "enable": true,
+                        "server": "http://127.0.0.1:8765",
+                        "tags": [],
+                        "screenshot": {
+                            "format": "png",
+                            "quality": 92
+                        },
+                        "terms": {
+                            "deck": "魔法科::四葉継承編(16)",
+                            "model": "Lapis",
+                            "fields": {
+                                "Expression": "{expression}",
+                                "ExpressionFurigana": "{furigana-plain}",
+                                "ExpressionReading": "{reading}",
+                                "ExpressionAudio": "{audio}",
+                                "SelectionText": "{popup-selection-text}",
+                                "MainDefinition": "{single-glossary-jmdict-2024-10-12}",
+                                "Sentence": "{cloze-prefix}<b>{cloze-body}</b>{cloze-suffix}",
+                                "SentenceFurigana": "",
+                                "SentenceAudio": "",
+                                "Picture": "",
+                                "Glossary": "{glossary}",
+                                "Hint": "",
+                                "IsHintCard": "",
+                                "IsClickCard": "x",
+                                "IsSentenceCard": "",
+                                "PitchPosition": "{pitch-accent-positions}",
+                                "Frequency": "{frequencies}",
+                                "FreqSort": "{frequency-harmonic-rank}",
+                                "MiscInfo": ""
+                            }
+                        },
+                        "kanji": {
+                            "deck": "Default",
+                            "model": "Basic",
+                            "fields": {
+                                "Front": "{character}",
+                                "Back": ""
+                            }
+                        },
+                        "fieldTemplates": null,
+                        "duplicateScope": "collection",
+                        "checkForDuplicates": true,
+                        "suspendNewCards": false,
+                        "duplicateScopeCheckAllModels": false,
+                        "noteGuiMode": "browse",
+                        "apiKey": "",
+                        "downloadTimeout": 0,
+                        "duplicateBehavior": "new",
+                        "displayTagsAndFlags": "never"
+                    },
+                    "parsing": {
+                        "enableScanningParser": true,
+                        "enableMecabParser": false,
+                        "selectedParser": "scan",
+                        "readingMode": "none",
+                        "termSpacing": false
+                    },
+                    "translation": {
+                        "textReplacements": {
+                            "searchOriginal": true,
+                            "groups": [
+                                [
+                                    {
+                                        "pattern": "1|１",
+                                        "ignoreCase": false,
+                                        "replacement": "一"
+                                    },
+                                    {
+                                        "pattern": "2|２",
+                                        "ignoreCase": false,
+                                        "replacement": "二"
+                                    },
+                                    {
+                                        "pattern": "3|３",
+                                        "ignoreCase": false,
+                                        "replacement": "三"
+                                    },
+                                    {
+                                        "pattern": "4|４",
+                                        "ignoreCase": false,
+                                        "replacement": "四"
+                                    },
+                                    {
+                                        "pattern": "5|５",
+                                        "ignoreCase": false,
+                                        "replacement": "五"
+                                    },
+                                    {
+                                        "pattern": "6|６",
+                                        "ignoreCase": false,
+                                        "replacement": "六"
+                                    },
+                                    {
+                                        "pattern": "7|７",
+                                        "ignoreCase": false,
+                                        "replacement": "七"
+                                    },
+                                    {
+                                        "pattern": "8|８",
+                                        "ignoreCase": false,
+                                        "replacement": "八"
+                                    },
+                                    {
+                                        "pattern": "9|９",
+                                        "ignoreCase": false,
+                                        "replacement": "九"
+                                    },
+                                    {
+                                        "pattern": "(.)々",
+                                        "ignoreCase": false,
+                                        "replacement": "$1$1"
+                                    },
+                                    {
+                                        "pattern": "ッ",
+                                        "ignoreCase": false,
+                                        "replacement": "っ"
+                                    },
+                                    {
+                                        "pattern": "・|、|\\-|\\.|\\s",
+                                        "ignoreCase": false,
+                                        "replacement": ""
+                                    }
+                                ]
+                            ]
+                        },
+                        "searchResolution": "letter"
+                    },
+                    "sentenceParsing": {
+                        "scanExtent": 200,
+                        "terminationCharacters": [
+                            {
+                                "enabled": true,
+                                "character1": "「",
+                                "character2": "」",
+                                "includeCharacterAtStart": true,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "『",
+                                "character2": "』",
+                                "includeCharacterAtStart": true,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "\"",
+                                "character2": "\"",
+                                "includeCharacterAtStart": true,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "'",
+                                "character2": "'",
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": false
+                            },
+                            {
+                                "enabled": true,
+                                "character1": ".",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "!",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "?",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "．",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "。",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "！",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "？",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "…",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "︒",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "︕",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "︖",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "︙",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            }
+                        ],
+                        "terminationCharacterMode": "custom"
+                    },
+                    "inputs": {
+                        "hotkeys": [
+                            {
+                                "action": "close",
+                                "key": "Escape",
+                                "modifiers": [],
+                                "scopes": [
+                                    "popup"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "focusSearchBox",
+                                "key": "Escape",
+                                "modifiers": [],
+                                "scopes": [
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "previousEntry",
+                                "key": "PageUp",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": "3"
+                            },
+                            {
+                                "action": "nextEntry",
+                                "key": "PageDown",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": "3"
+                            },
+                            {
+                                "action": "lastEntry",
+                                "key": "End",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "firstEntry",
+                                "key": "Home",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "previousEntry",
+                                "key": "ArrowUp",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": "1"
+                            },
+                            {
+                                "action": "nextEntry",
+                                "key": "ArrowDown",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": "1"
+                            },
+                            {
+                                "action": "historyBackward",
+                                "key": "KeyB",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "historyForward",
+                                "key": "KeyF",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "addNoteKanji",
+                                "key": "KeyK",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "addNoteTermKanji",
+                                "key": "KeyE",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "addNoteTermKana",
+                                "key": "KeyR",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "playAudio",
+                                "key": "KeyP",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "viewNotes",
+                                "key": "KeyV",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "copyHostSelection",
+                                "key": "KeyC",
+                                "modifiers": [
+                                    "ctrl"
+                                ],
+                                "scopes": [
+                                    "popup"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "profilePrevious",
+                                "key": "Minus",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search",
+                                    "web"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "profileNext",
+                                "key": "Equal",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search",
+                                    "web"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            }
+                        ]
+                    },
+                    "popupWindow": {
+                        "width": 400,
+                        "height": 250,
+                        "left": 0,
+                        "top": 0,
+                        "useLeft": false,
+                        "useTop": false,
+                        "windowType": "popup",
+                        "windowState": "normal"
+                    },
+                    "clipboard": {
+                        "enableBackgroundMonitor": false,
+                        "enableSearchPageMonitor": true,
+                        "autoSearchContent": true,
+                        "maximumSearchLength": 1000
+                    },
+                    "accessibility": {
+                        "forceGoogleDocsHtmlRendering": false
+                    }
+                },
+                "conditionGroups": [
+                    {
+                        "conditions": [
+                            {
+                                "type": "modifierKeys",
+                                "operator": "are",
+                                "value": "alt"
+                            }
+                        ]
+                    }
+                ],
+                "id": "profile-0"
+            },
+            {
+                "name": "Mining LNs",
+                "options": {
+                    "general": {
+                        "enable": true,
+                        "resultOutputMode": "group",
+                        "debugInfo": false,
+                        "maxResults": 32,
+                        "showAdvanced": true,
+                        "popupDisplayMode": "default",
+                        "popupWidth": 512,
+                        "popupHeight": 312,
+                        "popupHorizontalOffset": 0,
+                        "popupVerticalOffset": 0,
+                        "popupHorizontalOffset2": 0,
+                        "popupVerticalOffset2": 0,
+                        "popupHorizontalTextPosition": "below",
+                        "popupVerticalTextPosition": "before",
+                        "showGuide": false,
+                        "compactTags": true,
+                        "mainDictionary": "JMdict",
+                        "customPopupCss": ":root {\n    --background-color: #DEE4E7;\n    --text-color: #000000;\n    --tag-frequency-background-color: #8181C1;\n    --tag-part-of-speech-background-color: #8181C1;\n    --tag-text-color: #FFFFFF;\n    --reason-text-color: #808080;\n    --notification-text-color: #000000;\n    --notification-background-color: #E5E9F0;\n    --sidebar-background-color: #CFD9DC;\n    --sidebar-button-background-color-hover: #9283C1;\n    --sidebar-button-danger-background-color-hover: #BF616A;\n    --sidebar-button-icon-color: #A89BD0;\n    --accent-color: #8181C1;\n    --dict-color: #9057AD;\n    --dict-text-color: #FFFFFF;\n}\n\n:root[data-theme=\"dark\"] {\n    --background-color: #2E303E;\n    --text-color: #FFFFFF;\n    --tag-frequency-background-color: #67679A;\n    --tag-part-of-speech-background-color: #67679A;\n    --reason-text-color: #808080;\n    --notification-text-color: #FFFFFF;\n    --notification-background-color: #3B4252;\n    --sidebar-background-color: #262733;\n    --sidebar-button-background-color-hover: #644EA7;\n    --sidebar-button-danger-background-color-hover: #BF616A;\n    --sidebar-button-icon-color: #A89BD0;\n    --accent-color: #67679A;\n    --dict-color: #9057AD;\n    --dict-text-color: #FFFFFF;\n}\n\nspan.headword-term {\n    font-family: notosans;\n}\n\nspan.query-parser-term {\n    font-family: notosans;\n}\n\n.gloss-content {\n    font-family: notosans;\n    line-height: 1;\n    font-size: 16px;\n}\n\n.definition-tag-list {\n    float: left;\n    line-height: 1;\n    height: 1em;\n}\n \n.definition-list {\n    padding: 0;\n}\n\n.definition-item { \n    display: inline-block;\n    margin-bottom: 10px;\n    border-bottom: 1px solid;\n    margin: 0 calc(0px - var(--entry-horizontal-padding));\n    width: 100%;\n    padding: 10px calc(var(--entry-horizontal-padding)) 10px calc(var(--entry-horizontal-padding));\n}\n\n.tag-label-content {\n    font-family: notosans;\n    font-size: 11px;\n}\n\n.tag {\n    --tag-height: 0;\n}\n\n.tag[data-details=\"アクセント辞典\"] {\n    --tag-color: var(--accent-color);\n    --tag-text-color: var(--dict-text-color);\n}\n\n.tag[data-details=\"JMdict (English)\"] {\n    --tag-color: var(--dict-color);\n    --tag-text-color: var(--dict-text-color);\n}\n \n.tag[data-details=\"旺文社国語辞典 第十一版\"] {\n    --tag-color: var(--dict-color);\n    --tag-text-color: var(--dict-text-color);\n}\n \n.tag[data-details=\"明鏡国語辞典\"] { \n    --tag-color: var(--dict-color);\n    --tag-text-color: var(--dict-text-color);\n}\n \n.tag[data-details=\"ハイブリッド新辞林\"] {\n    --tag-color: var(--dict-color);\n    --tag-text-color: var(--dict-text-color);\n}\n \n.tag[data-details=\"実用日本語表現辞典\"] {\n    --tag-color: var(--dict-color);\n    --tag-text-color: var(--dict-text-color);\n}\n \n.tag[data-details=\"新明解国語辞典 第五版\"] {\n    --tag-color: var(--dict-color);\n    --tag-text-color: var(--dict-text-color);\n}\n \n.tag[data-details=\"デジタル大辞泉\"] {\n    --tag-color: var(--dict-color);\n    --tag-text-color: var(--dict-text-color);\n}\n \n.tag[data-details=\"研究社　新和英大辞典　第５版\"] {\n    --tag-color: var(--dict-color);\n    --tag-text-color: var(--dict-text-color);\n}\n\n::-webkit-scrollbar {\n    display: none;\n}\n\n.top-progress-bar-container {\n    display: none;\n}\n\n.kanji-glyph-data > tbody > tr:nth-child(n + 3) {\n  display: none;\n}\n\ndiv.entry[data-type='kanji']:nth-child(n + 2) .kanji-glyph-container,\ndiv.entry[data-type='kanji']:nth-child(n + 2) [data-section-type='frequencies'],\ndiv.entry[data-type='kanji']:nth-child(n + 2) table.kanji-glyph-data > tbody > tr:first-child {\n  display: none;\n}\n\n.kanji-info-table-item-value-empty {\n  display: none;\n}\n\n.kanji-glyph-data,\ndiv.entry[data-type='kanji'],\ndiv.entry[data-type='kanji']:nth-child(n + 2) .kanji-glyph-data > tbody > tr > *,\n.kanji-glyph-data dl.kanji-readings-japanese,\ndiv.entry[data-type='kanji']:nth-child(n + 2)\n  .kanji-glyph-data\n  dl.kanji-readings-chinese[data-count='0'] {\n  padding-top: 0 !important;\n  padding-bottom: 0 !important;\n  margin-bottom: 0em;\n  margin-top: 0 !important;\n}\n\n.entry + .entry[data-type='kanji'],\ndiv#dictionary-entries > div.entry:nth-child(n + 2) .kanji-glyph-data > tbody > tr > * {\n  border-top: none !important;\n}\n\n.kanji-gloss-list {\n  list-style-type: circle;\n}",
+                        "popupTheme": "dark",
+                        "popupOuterTheme": "site",
+                        "customPopupOuterCss": "",
+                        "enableWanakana": true,
+                        "popupScalingFactor": 1.1,
+                        "popupScaleRelativeToPageZoom": false,
+                        "popupScaleRelativeToVisualViewport": true,
+                        "showPitchAccentDownstepNotation": true,
+                        "showPitchAccentPositionNotation": true,
+                        "showPitchAccentGraph": true,
+                        "showIframePopupsInRootFrame": false,
+                        "useSecurePopupFrameUrl": true,
+                        "usePopupShadowDom": true,
+                        "usePopupWindow": false,
+                        "glossaryLayoutMode": "compact",
+                        "popupCurrentIndicatorMode": "triangle",
+                        "popupActionBarVisibility": "auto",
+                        "popupActionBarLocation": "top",
+                        "frequencyDisplayMode": "split-tags-grouped",
+                        "termDisplayMode": "ruby",
+                        "sortFrequencyDictionary": "CC100",
+                        "sortFrequencyDictionaryOrder": "ascending",
+                        "language": "ja",
+                        "enableContextMenuScanSelected": true,
+                        "stickySearchHeader": false,
+                        "fontFamily": "",
+                        "fontSize": 14,
+                        "lineHeight": "1.5",
+                        "showDebug": false
+                    },
+                    "audio": {
+                        "enabled": true,
+                        "sources": [
+                            {
+                                "type": "jpod101",
+                                "url": "",
+                                "voice": ""
+                            },
+                            {
+                                "type": "language-pod-101",
+                                "url": "",
+                                "voice": ""
+                            },
+                            {
+                                "type": "custom-json",
+                                "url": "http://localhost:8770/?term={term}&reading={reading}",
+                                "voice": ""
+                            }
+                        ],
+                        "volume": 25,
+                        "autoPlay": false
+                    },
+                    "scanning": {
+                        "selectText": true,
+                        "alphanumeric": false,
+                        "autoHideResults": true,
+                        "delay": 0,
+                        "length": 10,
+                        "deepDomScan": false,
+                        "popupNestingMaxDepth": 0,
+                        "enablePopupSearch": false,
+                        "enableOnPopupExpressions": true,
+                        "enableOnSearchPage": true,
+                        "enableSearchTags": false,
+                        "layoutAwareScan": false,
+                        "hideDelay": 100,
+                        "preventMiddleMouse": {
+                            "onWebPages": false,
+                            "onPopupPages": false,
+                            "onSearchPages": false,
+                            "onSearchQuery": false
+                        },
+                        "inputs": [
+                            {
+                                "include": "shift",
+                                "exclude": "mouse0",
+                                "types": {
+                                    "mouse": true,
+                                    "touch": false,
+                                    "pen": false
+                                },
+                                "options": {
+                                    "showAdvanced": false,
+                                    "searchTerms": true,
+                                    "searchKanji": true,
+                                    "scanOnTouchMove": true,
+                                    "scanOnPenHover": true,
+                                    "scanOnPenPress": true,
+                                    "scanOnPenRelease": false,
+                                    "preventTouchScrolling": true,
+                                    "scanOnPenMove": true,
+                                    "scanOnPenReleaseHover": false,
+                                    "scanOnTouchPress": false,
+                                    "scanOnTouchRelease": false,
+                                    "preventPenScrolling": true,
+                                    "scanOnTouchTap": true
+                                }
+                            },
+                            {
+                                "include": "mouse2",
+                                "exclude": "",
+                                "types": {
+                                    "mouse": true,
+                                    "touch": false,
+                                    "pen": false
+                                },
+                                "options": {
+                                    "showAdvanced": false,
+                                    "searchTerms": true,
+                                    "searchKanji": true,
+                                    "scanOnTouchMove": true,
+                                    "scanOnPenHover": true,
+                                    "scanOnPenPress": true,
+                                    "scanOnPenRelease": false,
+                                    "preventTouchScrolling": true,
+                                    "scanOnPenMove": true,
+                                    "scanOnPenReleaseHover": false,
+                                    "scanOnTouchPress": false,
+                                    "scanOnTouchRelease": false,
+                                    "preventPenScrolling": true,
+                                    "scanOnTouchTap": true
+                                }
+                            },
+                            {
+                                "include": "",
+                                "exclude": "",
+                                "types": {
+                                    "mouse": false,
+                                    "touch": true,
+                                    "pen": true
+                                },
+                                "options": {
+                                    "showAdvanced": false,
+                                    "searchTerms": true,
+                                    "searchKanji": true,
+                                    "scanOnTouchMove": false,
+                                    "scanOnPenHover": false,
+                                    "scanOnPenPress": true,
+                                    "scanOnPenRelease": false,
+                                    "preventTouchScrolling": false,
+                                    "scanOnPenMove": true,
+                                    "scanOnPenReleaseHover": false,
+                                    "scanOnTouchPress": false,
+                                    "scanOnTouchRelease": false,
+                                    "preventPenScrolling": false,
+                                    "scanOnTouchTap": true
+                                }
+                            }
+                        ],
+                        "modifier": null,
+                        "matchTypePrefix": false,
+                        "hidePopupOnCursorExit": false,
+                        "hidePopupOnCursorExitDelay": 100,
+                        "normalizeCssZoom": true,
+                        "scanWithoutMousemove": true,
+                        "scanResolution": "character"
+                    },
+                    "dictionaries": [
+                        {
+                            "name": "日本語文法辞典(全集)",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "日本語文法辞典(全集)"
+                        },
+                        {
+                            "name": "三省堂国語辞典　第八版",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "三省堂国語辞典　第八版"
+                        },
+                        {
+                            "name": "デジタル大辞泉",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "デジタル大辞泉"
+                        },
+                        {
+                            "name": "明鏡国語辞典　第二版",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "明鏡国語辞典　第二版"
+                        },
+                        {
+                            "name": "実用日本語表現辞典",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "実用日本語表現辞典"
+                        },
+                        {
+                            "name": "weblio古語辞典",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "weblio古語辞典"
+                        },
+                        {
+                            "name": "全国方言辞典",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "全国方言辞典"
+                        },
+                        {
+                            "name": "漢字ペディア同訓異義",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "漢字ペディア同訓異義"
+                        },
+                        {
+                            "name": "PixivLight",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "PixivLight"
+                        },
+                        {
+                            "name": "漢字辞典オンライン",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "漢字辞典オンライン"
+                        },
+                        {
+                            "name": "NHK",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "NHK"
+                        },
+                        {
+                            "name": "Narou",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "Narou"
+                        },
+                        {
+                            "name": "Novels",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "Novels"
+                        },
+                        {
+                            "name": "VN",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "VN"
+                        },
+                        {
+                            "name": "Anime & J-drama",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "Anime & J-drama"
+                        },
+                        {
+                            "name": "CC100",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "CC100"
+                        },
+                        {
+                            "name": "Innocent Ranked",
+                            "enabled": true,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "Innocent Ranked"
+                        },
+                        {
+                            "name": "JMnedict",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "JMnedict"
+                        },
+                        {
+                            "name": "Jitendex.org [2024-02-25]",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "alias": "Jitendex.org [2024-02-25]"
+                        },
+                        {
+                            "name": "JMdict [2024-10-12]",
+                            "alias": "JMdict [2024-10-12]",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "Youtube",
+                            "alias": "Youtube",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "JPDBv2㋕",
+                            "alias": "JPDBv2㋕",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "BCCWJ",
+                            "alias": "BCCWJ",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        },
+                        {
+                            "name": "Wikipedia",
+                            "alias": "Wikipedia",
+                            "enabled": false,
+                            "allowSecondarySearches": false,
+                            "definitionsCollapsible": "not-collapsible",
+                            "partsOfSpeechFilter": true,
+                            "useDeinflections": true,
+                            "styles": ""
+                        }
+                    ],
+                    "anki": {
+                        "enable": true,
+                        "server": "http://127.0.0.1:8765",
+                        "tags": [
+                            "yomichan"
+                        ],
+                        "screenshot": {
+                            "format": "png",
+                            "quality": 92
+                        },
+                        "terms": {
+                            "deck": "MiningLN",
+                            "model": "JP Mining Note",
+                            "fields": {
+                                "Key": "{expression}",
+                                "Word": "{expression}",
+                                "WordReading": "{furigana-plain}",
+                                "PAOverride": "",
+                                "PAOverrideText": "",
+                                "AJTWordPitch": "",
+                                "PrimaryDefinition": "{jpmn-primary-definition}",
+                                "PrimaryDefinitionPicture": "",
+                                "Sentence": "{cloze-prefix}<b>{cloze-body}</b>{cloze-suffix}",
+                                "SentenceReading": "",
+                                "AltDisplay": "",
+                                "AltDisplayPASentenceCard": "",
+                                "AdditionalNotes": "",
+                                "IsSentenceCard": "",
+                                "IsClickCard": "x",
+                                "IsHoverCard": "",
+                                "IsTargetedSentenceCard": "",
+                                "PAShowInfo": "",
+                                "PATestOnlyWord": "",
+                                "PADoNotTest": "",
+                                "PASeparateWordCard": "",
+                                "PASeparateSentenceCard": "",
+                                "SeparateClozeDeletionCard": "",
+                                "Hint": "",
+                                "HintNotHidden": "",
+                                "Picture": "",
+                                "WordAudio": "{audio}",
+                                "SentenceAudio": "",
+                                "PAGraphs": "{jpmn-pitch-accent-graphs}",
+                                "PAPositions": "{jpmn-pitch-accent-positions}",
+                                "PASilence": "[sound:_silence.wav]",
+                                "WordReadingHiragana": "{jpmn-word-reading-hiragana}",
+                                "FrequenciesStylized": "{jpmn-frequencies}",
+                                "FrequencySort": "{jpmn-frequency-sort}",
+                                "SecondaryDefinition": "{jpmn-secondary-definition}",
+                                "ExtraDefinitions": "{jpmn-extra-definitions}",
+                                "UtilityDictionaries": "{jpmn-utility-dictionaries}",
+                                "Comment": ""
+                            }
+                        },
+                        "kanji": {
+                            "deck": "Default",
+                            "model": "Basic",
+                            "fields": {
+                                "Front": "{character}",
+                                "Back": ""
+                            }
+                        },
+                        "fieldTemplates": null,
+                        "duplicateScope": "collection",
+                        "checkForDuplicates": true,
+                        "suspendNewCards": false,
+                        "duplicateScopeCheckAllModels": false,
+                        "noteGuiMode": "browse",
+                        "apiKey": "",
+                        "downloadTimeout": 0,
+                        "duplicateBehavior": "new",
+                        "displayTagsAndFlags": "never"
+                    },
+                    "parsing": {
+                        "enableScanningParser": true,
+                        "enableMecabParser": false,
+                        "selectedParser": "scan",
+                        "readingMode": "none",
+                        "termSpacing": false
+                    },
+                    "translation": {
+                        "textReplacements": {
+                            "searchOriginal": true,
+                            "groups": [
+                                [
+                                    {
+                                        "pattern": "1|１",
+                                        "ignoreCase": false,
+                                        "replacement": "一"
+                                    },
+                                    {
+                                        "pattern": "2|２",
+                                        "ignoreCase": false,
+                                        "replacement": "二"
+                                    },
+                                    {
+                                        "pattern": "3|３",
+                                        "ignoreCase": false,
+                                        "replacement": "三"
+                                    },
+                                    {
+                                        "pattern": "4|４",
+                                        "ignoreCase": false,
+                                        "replacement": "四"
+                                    },
+                                    {
+                                        "pattern": "5|５",
+                                        "ignoreCase": false,
+                                        "replacement": "五"
+                                    },
+                                    {
+                                        "pattern": "6|６",
+                                        "ignoreCase": false,
+                                        "replacement": "六"
+                                    },
+                                    {
+                                        "pattern": "7|７",
+                                        "ignoreCase": false,
+                                        "replacement": "七"
+                                    },
+                                    {
+                                        "pattern": "8|８",
+                                        "ignoreCase": false,
+                                        "replacement": "八"
+                                    },
+                                    {
+                                        "pattern": "9|９",
+                                        "ignoreCase": false,
+                                        "replacement": "九"
+                                    },
+                                    {
+                                        "pattern": "(.)々",
+                                        "ignoreCase": false,
+                                        "replacement": "$1$1"
+                                    },
+                                    {
+                                        "pattern": "ッ",
+                                        "ignoreCase": false,
+                                        "replacement": "っ"
+                                    },
+                                    {
+                                        "pattern": "・|、|\\-|\\.|\\s",
+                                        "ignoreCase": false,
+                                        "replacement": ""
+                                    }
+                                ]
+                            ]
+                        },
+                        "searchResolution": "letter"
+                    },
+                    "sentenceParsing": {
+                        "scanExtent": 200,
+                        "terminationCharacters": [
+                            {
+                                "enabled": true,
+                                "character1": "「",
+                                "character2": "」",
+                                "includeCharacterAtStart": true,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "『",
+                                "character2": "』",
+                                "includeCharacterAtStart": true,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "\"",
+                                "character2": "\"",
+                                "includeCharacterAtStart": true,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "'",
+                                "character2": "'",
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": false
+                            },
+                            {
+                                "enabled": true,
+                                "character1": ".",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "!",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "?",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "．",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "。",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "！",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "？",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "…",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "︒",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "︕",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "︖",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            },
+                            {
+                                "enabled": true,
+                                "character1": "︙",
+                                "character2": null,
+                                "includeCharacterAtStart": false,
+                                "includeCharacterAtEnd": true
+                            }
+                        ],
+                        "terminationCharacterMode": "custom"
+                    },
+                    "inputs": {
+                        "hotkeys": [
+                            {
+                                "action": "close",
+                                "key": "Escape",
+                                "modifiers": [],
+                                "scopes": [
+                                    "popup"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "focusSearchBox",
+                                "key": "Escape",
+                                "modifiers": [],
+                                "scopes": [
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "previousEntry",
+                                "key": "PageUp",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": "3"
+                            },
+                            {
+                                "action": "nextEntry",
+                                "key": "PageDown",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": "3"
+                            },
+                            {
+                                "action": "lastEntry",
+                                "key": "End",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "firstEntry",
+                                "key": "Home",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "previousEntry",
+                                "key": "ArrowUp",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": "1"
+                            },
+                            {
+                                "action": "nextEntry",
+                                "key": "ArrowDown",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": "1"
+                            },
+                            {
+                                "action": "historyBackward",
+                                "key": "KeyB",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "historyForward",
+                                "key": "KeyF",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "addNoteKanji",
+                                "key": "KeyK",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "addNoteTermKanji",
+                                "key": "KeyE",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "addNoteTermKana",
+                                "key": "KeyR",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "playAudio",
+                                "key": "KeyP",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "viewNotes",
+                                "key": "KeyV",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "copyHostSelection",
+                                "key": "KeyC",
+                                "modifiers": [
+                                    "ctrl"
+                                ],
+                                "scopes": [
+                                    "popup"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "profilePrevious",
+                                "key": "Minus",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search",
+                                    "web"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            },
+                            {
+                                "action": "profileNext",
+                                "key": "Equal",
+                                "modifiers": [
+                                    "alt"
+                                ],
+                                "scopes": [
+                                    "popup",
+                                    "search",
+                                    "web"
+                                ],
+                                "enabled": true,
+                                "argument": ""
+                            }
+                        ]
+                    },
+                    "popupWindow": {
+                        "width": 400,
+                        "height": 250,
+                        "left": 0,
+                        "top": 0,
+                        "useLeft": false,
+                        "useTop": false,
+                        "windowType": "popup",
+                        "windowState": "normal"
+                    },
+                    "clipboard": {
+                        "enableBackgroundMonitor": false,
+                        "enableSearchPageMonitor": true,
+                        "autoSearchContent": true,
+                        "maximumSearchLength": 1000
+                    },
+                    "accessibility": {
+                        "forceGoogleDocsHtmlRendering": false
+                    }
+                },
+                "conditionGroups": [
+                    {
+                        "conditions": [
+                            {
+                                "type": "modifierKeys",
+                                "operator": "are",
+                                "value": "alt"
+                            }
+                        ]
+                    }
+                ],
+                "id": "profile-1"
+            }
+        ],
+        "profileCurrent": 0,
+        "version": 56,
+        "global": {
+            "database": {
+                "prefixWildcardsSupported": true
+            }
+        }
+    }
+}
